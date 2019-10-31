@@ -1,0 +1,56 @@
+<head>
+
+
+</head>
+
+<form (submit)="saveResturant()" class="form-horizontal">
+
+  <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Resturant ID</label>
+      <div class="col-sm-10">
+          <input type="number" name="resturantId" [(ngModel)]="resturant.resturantId" ></div></div>
+  <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Resturant Name</label>
+      <div class="col-sm-10">
+      <input type="text" name="resturantName" [(ngModel)]="resturant.resturantName" ></div></div>
+  <div class="form-group">
+      <label class="control-label col-sm-2" for="email">location</label>
+      <div class="col-sm-10">
+      <input type="text" name="location" [(ngModel)]="resturant.location" ></div></div>
+  <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Ratings</label>
+      <div class="col-sm-10">
+        <input type="number" name="rating" [(ngModel)]="resturant.rating" ></div></div>
+    <div class="form-group"><div class="col-sm-10"><input type="submit" value="save" class="btn btn-primary"></div>
+</div>
+</form>
+
+
+
+<input type="submit" value=" Update " (click)="updateResturant()" class="btn btn-outline-primary">
+
+<input type="submit" value=" Delete " class="btn btn-outline-success" (click)="deleteResturant()" >
+
+
+<input type="submit" value=" Get By ID " (click)="getResturant()" class="btn btn-outline-danger">
+
+
+<input type="submit" value=" Get All Resturant " (click)="getResturants()" class="btn">
+<table class="table" border="3px">
+
+  <tr>
+    <th>id</th>
+    <th>restname</th>
+    <th>location</th>
+    <th>ratings</th>
+
+  </tr>
+    <tr *ngFor="let r of resturants">
+      <td>{{r.resturantId}}</td>
+      <td>{{r.resturantName}}</td>
+      <td>{{r.location}}</td>
+      <td>{{r.rating}}</td>
+
+    </tr>
+</table>
+
